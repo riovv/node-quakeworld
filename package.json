@@ -1,0 +1,14 @@
+{ 
+  "name" : "quakeworld",
+  "description" : "Send connection-less commands to QuakeWorld servers, such as status and lastscores etc.",
+  "tags" : ["quakeworld", "quake" , "qw"],
+  "version" : "0.2.0",
+  "author" : "Patric Nordmark <patric.nordmark@gmail.com>",
+  "repository" : { 
+    "type" : "git",
+    "url" : "http://github.com/I-ARE-RIO/node-quakeworld.git"
+  },
+  "bugs" : { "url" : "http://github.com/I-ARE-RIO/node-quakeworld/issues" },
+  "engines" : ["node >= 0.3.6"],
+  "main" : "./quakeworld",
+}
