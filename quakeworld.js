@@ -1,7 +1,5 @@
 var dgram = require('dgram');
 
-module.exports = quakeworld;
-
 var UDP_TIMEOUT = 3000,
     CHARSET = {
       0: 46, // .
@@ -207,3 +205,5 @@ var udp_command = function (address, port, data, callback) {
     });
   });
 };
+
+module.exports = quakeworld;
