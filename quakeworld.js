@@ -190,18 +190,21 @@ var udp_command = function (address, port, data, callback) {
 
   client.send(buf, 0, buf.length, port, address, function () {
     var timeoutId = setTimeout(function () { 
-      callback({ error: 'timeout' }); 
       client.removeAllListeners();
+      client.close();
+      return callback({ error: 'timeout' }); 
     }, UDP_TIMEOUT);
 
     client.once('message', function (msg, rinfo) {  
       clearTimeout(timeoutId);
-      callback(null, msg);  
+      client.close();
+      return callback(null, msg);  
     });
 
     client.once('error', function (err) { 
       clearTimeout(timeoutId);    
-      callback(err); 
+      client.close();
+      return callback(err); 
     });
   });
 };
